@@ -32,3 +32,13 @@ def model_output(model, X_t, X_val, y_t, y_val):
 
         
     return
+
+def plot_feature_importances(model):
+    n_features = X_resample.shape[1]
+    plt.figure(figsize=(8,15))
+    plt.barh(range(n_features), model.feature_importances_, align='center') 
+    plt.yticks(np.arange(n_features), X_resample.columns.values) 
+    plt.title('Random forest feature importance')
+    plt.xlabel('Feature importance')
+    plt.ylabel('Feature')
+    plt.savefig(f'../report/figures/{str(model)}Feature_importance.png',dpi=300, bbox_inches='tight') 
