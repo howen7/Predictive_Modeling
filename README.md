@@ -4,14 +4,7 @@
 
 The goal of this project is to create a model that can accurately predict Syria Tel’s churn rate, or which of Syria Tel’s customers are likely to leave. The analysis is done with the hopes that if Syria Tel can understand who is likely to leave, than perhaps they can invest resources in preventing the customers from doing so. 
 
-The data set we used comes directly from Syria Tel and can be found on Kaggle. 
-
-
-
-
-
-
-The dataset we used comes directly from Syria Tel and can be found on Kaggle. After eliminating the Area Code and the account numbers, our dataset consisted of customer profiles that included whether or not the the customer had an international plan, a voice mail plan, the minutes charged, the number of customer service calls they mad, their state and….
+The data set we used comes directly from Syria Tel and can be found on Kaggle. After eliminating the Area Code and the account numbers, our dataset consisted of customer profiles that included whether or not the the customer had an international plan, a voice mail plan, the minutes charged, the number of customer service calls they mad, their state and….
 
 
 
