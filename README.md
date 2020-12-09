@@ -1,5 +1,5 @@
 # Predictive_Modeling
-Flatiron Group Project 3- Explaining SyriaTel's Churn Rate
+
 
 ---
 
