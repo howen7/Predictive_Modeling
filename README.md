@@ -1,17 +1,83 @@
-# Predictive_Modeling
+# Predicting Churn of customers
+![telecom-photo](/notebooks/report/figures/Read_me.png)
+
+# Table of Contents
+
+<!--ts-->
+ * [General Setup Instructions](https://github.com/howen7/Alzeimers#general-setup-instructions)
+ * [Context of Project](https://github.com/howen7/Alzeimers#Context)
+ * [Data](https://github.com/howen7/Alzeimers#Data)
+ * [Process](https://github.com/howen7/Alzeimers#models-used--methodology)
+ * [Results & Next Steps](https://github.com/howen7/Alzeimers#Results)
+<!--te-->
+```
+.
+├── README.md     
+├── environment.yml
+├── notebooks
+│   ├── exploratory
+│   │   ├── Hunter.ipynb
+│   │   ├── Hunter2.ipynb
+│   │   ├── 01_oz_data_collections_exploration.ipynb
+│   │   ├── oz_01_data_collections_exploration.ipynb
+│   │   ├── oz_02_log_reg.ipynb
+│   │   ├── oz_03_rad_forest.ipynb 
+│   └── report
+│       ├── figures
+│       │   ├── CostDayCharge.png
+│       │   ├── CustumorServiceCalls.png
+│       │   ├── Early_Models.png
+│       │   ├── Feat.png
+│       │   ├── FeatureImportanceEarly.png
+│       │   ├── Final_model.png
+│       │   ├── Final_model_features.png
+│       │   ├── Internationalplan.png
+│       │   ├──RandomForest.png
+│       │   ├──RandomForestclassifier.png
+│       └── FinalNotebook.ipynb
+│   
+└── src
+    ├── my_mods.py
+    └── data
+        ├──X_dataframe.csv
+        ├──syriatel_customer_churn.csv
+        └──y_dataframe.csv
+```
+#### Repo Navigation Links 
+ - [Final summary notebook](https://github.com/howen7/Alzeimers/tree/main/notebooks/report/FinalNotebook.ipynb)
+ - [Exploratory notebooks folder](https://github.com/howen7/Alzeimers/tree/main/notebooks/exploratory)
+ - [src folder](https://github.com/howen7/Alzeimers/tree/main/src)
+ - [Presentation.pdf](https://github.com/howen7/Alzeimers/tree/main/reports)
+
+# General Setup Instructions 
+
+Ensure that you have installed [Anaconda](https://docs.anaconda.com/anaconda/install/).
+
+### `alz-env` conda Environment
+
+This project relies on you using the [`environment.yml`](environment.yml) file to recreate the `alz-env` conda environment. To do so, please run the following commands *in your terminal*:
+```bash
+# create the alz-env conda environment
+conda env create -f environment.yml
+# activate the conda environment
+conda activate alz-env
+# if needed, make alz-env available to you as a kernel in jupyter
+python -m ipykernel install --user --name alz-env --display-name "Python 3 (alz-env)"
+```
 
 
----
+# Project Goal:
 
-Project Goal:
+In this project we looked at, and analyzed, SyriaTel's customer data to see what was driving their churn rate. Our goal was to come up with a model that could help us predict, with high precision and recall, when a customer churns, or leaves the company, and then use that model to help us narrow down which factors were the most important in driving customer churn.
 
-In this project we looked at, and analyzed, SyriaTel's customer data to see what was driving their churn rate. Our goal was to come up with a model that could help us predict, with high precision and recall, when a customer churns, or leaves the company, and then use that model to help us narrow down which factors were the most important in driving customer churn. As it stands, their current churn rate is 15%. 
+
+# Data:
 
 The data we used can be found here: https://www.kaggle.com/becksddf/churn-in-telecoms-dataset
+As it stands, their current churn rate is 15%. 
 
-Below we have outlined our data science process.
 
----
+# Models used + Methodology:
 
 EDA:
 
@@ -68,7 +134,7 @@ For each we did a first simple model initially, and compared each model's scores
 - SMOTE to balance our classs within our train dataset
 - Model algorithm. 
 
-
+# Results:
 -Final Model-
 Once we set up our pipeline, we used gridsearch to help us tune the parameters for each modeling algorithm to see which one gave us the best scores, and in the end, Random Forest and XGBoost gave us the best scores, with XGBoost being slightly better overall, so we decided to go with that as our final model, and with the following params:
 - learnin_rate = 0.01
@@ -84,7 +150,7 @@ Out of the 101 people who churned (chrun = True), our model correctly predicted 
 Out of the 566 people who statyed, our model correctly predicted 548
 
 
--Further Analysis-
+# Further Analysis
 We looked at the feature importance of our model to see which features best predicted churn, and made a list of the top 5, in order:
 
 - International Plan
@@ -97,7 +163,7 @@ We went back to our original data to see the correlation between these features 
 
 ---
 
-CONCLUSION:
+# CONCLUSION:
 
 Our findings are stated below, along with our recommendations:
 
@@ -119,15 +185,3 @@ This further validates our findings concerning the higher churn rate of customer
 Customers who DID NOT have a voicemail plan tended to churn more.
 RECOMMENDATION: reach out to customers who don't have a voicemail plan, and offer them a promotion perhaps to get them to sign up with the voicemail plan.
 
----
-
-The DIRECTORY STRUCTURE for this project is as follows:
-
-├── notebooks          <- Jupyter notebooks. Naming convention is a name followed by a number (for ordering)
-│   │                     followed by the topic of the notebook, e.g.
-│   │                     oz_01_data_collection_exploration.ipynb
-│   └── exploratory    <- Raw, flow-of-consciousness, work-in-progress notebooks
-│   └── report         <- Final summary notebook(s), & pdf of final powerpoint presentation
-│
-├── src                <- customer functions, and original SyriaTel customer data
-│   ├── data           <- csv files containing the SyraTel's customer data, along with csv files of our features and target variables.
