@@ -1,14 +1,15 @@
-# Predicting Churn of customers
+# Churn Analysis of Telecom Company
 ![telecom-photo](/notebooks/report/figures/Read_me.png)
 
 # Table of Contents
 
 <!--ts-->
- * [General Setup Instructions](https://github.com/howen7/Alzeimers#general-setup-instructions)
- * [Context of Project](https://github.com/howen7/Alzeimers#Context)
- * [Data](https://github.com/howen7/Alzeimers#Data)
- * [Process](https://github.com/howen7/Alzeimers#models-used--methodology)
- * [Results & Next Steps](https://github.com/howen7/Alzeimers#Results)
+ * [General Setup Instructions](https://github.com/howen7//Predictive_Modeling#general-setup-instructions)
+ * [Context of Project](https://github.com/howen7//Predictive_Modeling#Context)
+ * [Data](https://github.com/howen7//Predictive_Modeling#Data)
+ * [Process](https://github.com/howen7//Predictive_Modeling#models-used--methodology)
+ * [Results & Next Steps](https://github.com/howen7//Predictive_Modeling#Results)
+ * [Results & Next Steps](https://github.com/howen7//Predictive_Modeling#Conclusion)
 <!--te-->
 ```
 .
@@ -43,26 +44,22 @@
         ├──syriatel_customer_churn.csv
         └──y_dataframe.csv
 ```
-#### Repo Navigation Links 
- - [Final summary notebook](https://github.com/howen7/Alzeimers/tree/main/notebooks/report/FinalNotebook.ipynb)
- - [Exploratory notebooks folder](https://github.com/howen7/Alzeimers/tree/main/notebooks/exploratory)
- - [src folder](https://github.com/howen7/Alzeimers/tree/main/src)
- - [Presentation.pdf](https://github.com/howen7/Alzeimers/tree/main/reports)
+
 
 # General Setup Instructions 
 
 Ensure that you have installed [Anaconda](https://docs.anaconda.com/anaconda/install/).
 
-### `alz-env` conda Environment
+### `churn-env` conda Environment
 
-This project relies on you using the [`environment.yml`](environment.yml) file to recreate the `alz-env` conda environment. To do so, please run the following commands *in your terminal*:
+This project relies on you using the [`environment.yml`](environment.yml) file to recreate the `churn-env` conda environment. To do so, please run the following commands *in your terminal*:
 ```bash
-# create the alz-env conda environment
+# create the churn-env conda environment
 conda env create -f environment.yml
 # activate the conda environment
-conda activate alz-env
-# if needed, make alz-env available to you as a kernel in jupyter
-python -m ipykernel install --user --name alz-env --display-name "Python 3 (alz-env)"
+conda activate churn-env
+# if needed, make churn-env available to you as a kernel in jupyter
+python -m ipykernel install --user --name churn-env --display-name "Python 3 (churn-env)"
 ```
 
 
@@ -79,7 +76,7 @@ As it stands, their current churn rate is 15%.
 
 # Models used + Methodology:
 
-EDA:
+### EDA:
 
 After identifying and separating our target variable, 'churn', we checked for and found a severe class imbalance here. We knew this will have to be addressed in the preprocessing part.
 
@@ -93,32 +90,32 @@ After we ran our first simple models (FSM), specifcally the logistic regression 
 
 ---
 
-TRAIN-TEST-SPLIT:
+### TRAIN-TEST-SPLIT:
 
 Once we had narrowed down and finalized our feature columns, we split our data into training and test sets. We did this right now, and not after preprocessing our data, because we didn't want our data leaking between our training and testing set. We then moved on to preprocessing our data to prepare for modeling.
 
 ---
 
-PREPROCESSING:
+### PREPROCESSING:
 
 We began by first separating our numerical columns from our categoricals. 
 
--OneHotEncoding-
+- OneHotEncoding-
 We were left with only 2 categorical columns: International plan, and voicemail plan. Both columns had either a 'yes' or 'no', to indicate if the customer had any of these plans. We used OneHotEncoder to dummy out these columns.
 
 
--Scaling-
+- Scaling-
 We then joined our dummy and numerical columns togther, and scaled them all using standard scaler. We decided to scale our dummy columns because we saw that doing so improved our FSM's score vs only scaling our numericals.
 
 
--SMOTE-
+- SMOTE-
 As mentioned earlier, we had a severe class imbalance within this data set: 85% False vs 15% True. We used SMOTE to deal with this. And we did this only within our training data set.
 
 ---
 
-MODELING:
+### MODELING:
 
-We tried several modeling algorithms (in order):
+We tried several modeling algorithms:
 
 Logistic Regression
 
@@ -163,7 +160,7 @@ We went back to our original data to see the correlation between these features 
 
 ---
 
-# CONCLUSION:
+# Conclusion:
 
 Our findings are stated below, along with our recommendations:
 
