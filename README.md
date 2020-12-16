@@ -132,7 +132,7 @@ For each we did a first simple model initially, and compared each model's scores
 - Model algorithm. 
 
 # Results:
--Final Model-
+Final Model-
 Once we set up our pipeline, we used gridsearch to help us tune the parameters for each modeling algorithm to see which one gave us the best scores, and in the end, Random Forest and XGBoost gave us the best scores, with XGBoost being slightly better overall, so we decided to go with that as our final model, and with the following params:
 - learnin_rate = 0.01
 - max_depth = 4
