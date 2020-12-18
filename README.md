@@ -117,13 +117,10 @@ As mentioned earlier, we had a severe class imbalance within this data set: 85% 
 
 We tried several modeling algorithms:
 
-Logistic Regression
-
-KNN
-
-Random Forest
-
-XGBoost
+Logistic Regression<br>
+KNN<br>
+Random Forest<br>
+XGBoost<br>
 
 For each we did a first simple model initially, and compared each model's scores. At this point, once we had decided on our final dataframe (keep in mind we were still tuning the features as we ran FSMs), we decided to create a pipeline containing the following:
 - OneHotEncoder to dummy out our categoricals
