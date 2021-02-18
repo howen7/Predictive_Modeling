@@ -2,20 +2,6 @@ Flatiron Group Project 3- Explaining SyriaTel's Churn Rate
 
 ---
 
-The DIRECTORY STRUCTURE for this project is as follows:
-
-├── notebooks          <- Jupyter notebooks. Naming convention is a name followed by a number (for ordering)
-│   │                     followed by the topic of the notebook, e.g.
-│   │                     oz_01_data_collection_exploration.ipynb
-│   └── exploratory    <- Raw, flow-of-consciousness, work-in-progress notebooks
-│   └── report         <- Final summary notebook(s), & pdf of final powerpoint presentation
-│
-├── src                <- customer functions, and original SyriaTel customer data
-│   ├── data           <- csv files containing the SyraTel's customer data, along with csv files of our features and target variables. 
-
-
----
-
 Project Goal:
 
 In this project we looked at, and analyzed, SyriaTel's customer data to see what was driving their churn rate. Our goal was to come up with a model that could help us predict, with high precision and recall, when a customer churns, or leaves the company, and then use that model to help us narrow down which factors were the most important in driving customer churn. As it stands, their current churn rate is 15%. 
@@ -93,8 +79,8 @@ This gave us the following scores:
 False --> Precision 97% -- Recall 97% -- f1 score 97%
 True  --> Precision 83% -- Recall 84% -- f1 score 83%
 
-Out of the 101 people who churned (chrun = True), our model correctly predicted 85
-Out of the 566 people who statyed, our model correctly predicted 548
+Out of the 101 people who churned (chrun = True), our model correctly predicted 85.
+Out of the 566 people who stayed, our model correctly predicted 548.
 
 
 -Further Analysis-
@@ -106,7 +92,7 @@ We looked at the feature importance of our model to see which features best pred
 - Total International Calls
 - Voicemail Plan
 
-We went back to our original data to see the correlation between these features and churn, and confirmed that these features did indeed have a hi.
+We went back to our original data to see the correlation between these features and churn, and confirmed that these features did indeed have a high correlation with an increased churn rate, which validates our model.
 
 ---
 
@@ -131,3 +117,16 @@ This further validates our findings concerning the higher churn rate of customer
 - Voicemail Plan
 Customers who DID NOT have a voicemail plan tended to churn more.
 RECOMMENDATION: reach out to customers who don't have a voicemail plan, and offer them a promotion perhaps to get them to sign up with the voicemail plan.
+
+---
+
+The DIRECTORY STRUCTURE for this project is as follows:
+
+├── notebooks          <- Jupyter notebooks. Naming convention is a name followed by a number (for ordering)
+│   │                     followed by the topic of the notebook, e.g.
+│   │                     oz_01_data_collection_exploration.ipynb
+│   └── exploratory    <- Raw, flow-of-consciousness, work-in-progress notebooks
+│   └── report         <- Final summary notebook(s), & pdf of final powerpoint presentation
+│
+├── src                <- customer functions, and original SyriaTel customer data
+│   ├── data           <- csv files containing the SyraTel's customer data, along with csv files of our features and target variables. 
