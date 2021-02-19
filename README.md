@@ -1,4 +1,10 @@
-Flatiron Group Project 3- Explaining SyriaTel's Churn Rate
+# Explaining SyriaTel's Churn Rate
+
+![telecom_pic](/notebooks/report/figures/telecommunication_readme_pic.jpg)
+
+# Table of Contents
+
+* [Setup_Instructions](https://https://github.com/Ozxahmed/Predictive_Modeling#setup-instructions)
 
 ---
 
@@ -11,6 +17,8 @@ The data we used can be found here: https://www.kaggle.com/becksddf/churn-in-tel
 Below we have outlined our data science process.
 
 ---
+
+# Setup Instructions
 
 EDA:
 
